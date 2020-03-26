@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Resume | 张三</title>
+    <style>
+        html {
+            padding: 64px 0;
+            background-color: #eee;
+            height: 1240px;
+            font: 15px monaco, consolas, monospace;
+            line-height: 20px;
+        }
+
+        @media print {
+            html {
+                padding: 0;
+                height: 1123px;
+            }
+
+            #body {
+                border: none;
+                box-shadow: none;
+            }
+
+            #setting {
+                display: none;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: inherit;
+            font-weight: 100;
+            text-decoration: none;
+        }
+
+        body {
+            /*A4*/
+            position: absolute;
+            margin: 0 0 0 50vw;
+            padding: 0;
+            background-color: #fff;
+            color: #353535;
+            border: 1px solid rgba(0, 0, 0, .12);
+            box-shadow: 0 0 8px 0 rgba(0, 0, 0, .08), 0 0 15px 0 rgba(0, 0, 0, .02), 0 0 20px 4px rgba(0, 0, 0, .06);
+            width: 794px;
+            height: 1123px;
+            transform: translateX(-50%);
+        }
+
+        header {
+            display: flex;
+            padding: 16px;
+            background-color: #353535;
+            color: #eee;
+            width: 794px;
+            font-weight: bolder;
+            border-bottom: solid 1px;
+            justify-content: space-between;
+        }
+
+        main {
+            display: flex;
+            padding: 0 8px;
+            width: 794px;
+        }
+
+        main>div {
+            width: 50%;
+        }
+
+        main>div>section>h3 {
+            display: block;
+            padding: 2px 16px 4px 8px;
+            background-color: #353535;
+            color: #eee;
+            width: max-content;
+            min-width: 103px;
+            text-align: center;
+        }
+
+        section>div {
+            margin: -8px 16px 0 8px;
+            word-break: break-word;
+        }
+
+        .timeline {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline::before {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            background-color: #353535;
+            width: 2px;
+            height: 100%;
+            content: '';
+            margin-left: -1px;
+        }
+
+        .timeline>ul {
+            margin: .5em 0;
+            padding: 0 0 0 40px;
+        }
+
+        .timeline>ul>li {
+            display: block;
+            position: relative;
+        }
+
+        .timeline>ul>li::before {
+            display: block;
+            position: absolute;
+            left: -27.5px;
+            background-color: black;
+            outline: 4px solid white;
+            width: 1em;
+            height: 1em;
+            transform: rotate(45deg);
+            content: '';
+        }
+
+        .timeline>ul>li>label {
+            vertical-align: text-top;
+            line-height: .9em;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .timeline>ul>li>div {
+            margin: -.4em 0 1em 0;
+        }
+
+        ul {
+            padding: .3em 1em;
+            list-style: disc;
+        }
+
+        #skill {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #skill>div {
+            position: relative;
+            padding: 4px 0 8px 32px;
+            width: 50%;
+        }
+
+        #skill>div>label {
+            vertical-align: text-top;
+            line-height: .9em;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        #skill>div>label::before {
+            display: block;
+            position: absolute;
+            left: 8px;
+            background-color: black;
+            width: .8em;
+            height: .8em;
+            content: '';
+        }
+
+        #skill>div>ul {
+            margin: 0;
+        }
+
+        #setting {
+            position: absolute;
+            top: 128px;
+            right: 0;
+            padding: 8px 16px;
+            outline: solid 2px;
+            width: 300px;
+            transform: translateX(120%);
+        }
+
+        #setting>button {
+            background-color: #eee;
+            border: none;
+            outline: solid 2px;
+            font: 16px monaco, monospace, consolas;
+            cursor: pointer;
+        }
+
+        #setting>button[checked] {
+            filter: invert(100%);
+        }
+
+        #setting>input {
+            width: 64px;
+        }
+
+    </style>
+</head>
+
+<body id="body">
+    <!--基本信息-->
+    <header>
+        <!--个人信息-->
+        <section>
+            张三|男|1999<br>
+            清华大学·计算机科学与技术<br>
+            博士|2027<br>
+        </section>
+        <!--联系方式-->
+        <section style='text-align: right;'>
+            <a href='https://phlashing.me'>phlashing.me</a> : Blog&nbsp;&nbsp;<br>
+            <a href='https://github.com/arex0'>arex0</a> : Github<br>
+            <a href='tel:+86 12345678900'>+86 12345678900</a> : Tel&nbsp;&nbsp;&nbsp;<br>
+            <a href='mailto:cn.js.cross@gmail.com'>cn.js.cross@gmail.com</a> : Email&nbsp;<br>
+        </section>
+    </header>
+    <main>
+        <div>
+            <section>
+                <h3>经历</h3>
+                <div class='timeline'>
+                    <ul id='experience'>
+                        <li>
+                            <label>网易</label>
+                            <div>
+                                <ul>
+                                    <li>UI设计</li>
+                                    <li>前端开发</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>腾讯</label>
+                            <div>
+                                <ul>
+                                    <li>算法设计</li>
+                                    <li>自动驾驶</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <label>谷歌</label>
+                            <div>
+                                <ul>
+                                    <li>数据库管理</li>
+                                    <li>运维安全</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h3>技能</h3>
+                <div>
+                    <div id='radar'></div>
+                    <div id='skill'>
+                        <div><label>编程语言</label>
+                            <ul>
+                                <li>Javascript</li>
+                                <li>Golang</li>
+                                <li>Typescript</li>
+                                <li>Flutter</li>
+                                <li>C++</li>
+                            </ul>
+                        </div>
+                        <div><label>开发工具</label>
+                            <ul>
+                                <li>Docker</li>
+                                <li>PosgreSQL</li>
+                                <li>Redis</li>
+                                <li>Github</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div>
+            <section>
+                <h3>项目</h3>
+                <div class='timeline'>
+                    <ul id='project'>
+                        <li>
+                            <label>网易云音乐</label>
+                            <div>
+                                负责全部UI设计，和部分网页界面的编程。
+                            </div>
+                        </li>
+                        <li>
+                            <label>百度Apollo（阿波罗）自动驾驶</label>
+                            <div>
+                                负责路径规划和行驶安全的算法实现。
+                            </div>
+                        </li>
+                        <li>
+                            <label>谷歌网站安全识别</label>
+                            <div>
+                                实现搜索引擎对网站的分类和安全识别。
+                            </div>
+                        </li>
+                        <li>
+                            <label>Arex0个人黑白风博客</label>
+                            <div>
+                                前后端全部UI设计和代码编写。
+                            </div>
+                        </li>
+                        <li>
+                            <label>适合打印的黑白简历模板和生成</label>
+                            <div>
+                                负责所有原生代码设计和实现。<b style='color: red;'>模板信息大部分是虚拟的。</b>
+                            </div>
+                        </li>
+                        <li>
+                            <label>银河黑洞开发</label>
+                            <div>
+                                利用计算机模拟黑洞模型，并分析利用方法。
+                            </div>
+                        </li>
+                        <li>
+                            <label>VR转裸眼3D</label>
+                            <div>
+                                通过对VR资源的解析，生成适合用户视距的平行图像。
+                            </div>
+                        </li>
+                        <li>
+                            <label>命运：选择</label>
+                            <div>
+                                一个锻炼用户选择能力，用于分析生活各种选择对人生命运的改变。算法模型由法则-选择-命运三大元素构成。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h3>评价</h3>
+                <div>
+                    我非常擅长编程，比如非常熟悉Python, Swift, JavaScript, C#, C, Ruby, PHP, Haskell, Java, C++ 或者 Rust的hello world，
+                    对算法非常刻苦研究，对10大排序非常熟悉名字。很谦虚，毕竟我都无敌了都没和你们说过。
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id='setting' contenteditable='false'>
+        <button id='edit_button' onclick='edit_body()'>Edit/Print</button><br><br>
+        <button id='add_experience' onclick='add_experience()'>Add experience</button><br><br>
+        <button id='add_project' onclick='add_project()'>Add project</button><br><br>
+        <button id='add_skill' onclick='add_skill()'>Add skill</button><br><br>
+        <hr><br>
+        <button onclick='set_radar()'>Set Radar</button><br><br>
+        <textarea id='radar_config' style='width: 100%;min-height: 256px;'></textarea>
+    </div>
+</body>
+<script>
+    function radar(kvs, r) {
+        let n = kvs.length, pgs = Array(n+6), rads = Array(n), ru = 2 * Math.PI / n
+        for (let i = 0; i < n; i++) rads[i] = ru * i
+        for (let i = 1; i < 5; i++) {
+            let ps = Array(n);
+            for (let j = 0; j < n; j++) ps[j] = { 'x': Math.sin(rads[j]) * i * r, 'y': -Math.cos(rads[j]) * i * r }
+            pgs[i] = `<polygon points='${ps.map(p => p.x + ',' + p.y).join(' ')}' style='stroke:#353535;stroke-width:.2;fill-opacity:0;' />`
+            if (i == 4) {
+                for (let j = 0, k = 5; j < n; j++ , k++)
+                    pgs[k] = `<text x='${ps[j].x < 0 ? ps[j].x - kvs[j][0].length * 15 : ps[j].x}' y='${ps[j].y > 0 ? ps[j].y + 15 : ps[j].y}' fill='#353535'>${kvs[j][0]}</text>`
+                pgs[n+5] = `<polygon points='${kvs.map((kv, o) => kv[1] * ps[o].x + ',' + kv[1] * ps[o].y).join(' ')}' style='stroke:#353535;stroke-width:1;fill-opacity:0.2;' />`
+            }
+        }
+        return `<svg viewBox='-128 -128 256 256' color='#353535'>` + pgs.join('') + `</svg>`
+    }
+    function edit_body() {
+        document.designMode = document.designMode == 'on' ? (print(),'off') : 'on'
+        document.querySelector('#edit_button[checked]') ? document.getElementById('edit_button').removeAttribute('checked') : document.getElementById('edit_button').setAttribute('checked', '')
+    }
+    function add_experience() {
+        document.getElementById('experience').innerHTML += `<li><label>where</label><div><ul><li>what</li></ul></div></li>`
+    }
+    function add_project() {
+        document.getElementById('project').innerHTML += `<li><label>name</label><div>description</div></li>`
+    }
+    function add_skill() {
+        document.getElementById('skill').innerHTML += `<div><label>type</label><ul><li>what</li></ul></div>`
+    }
+    function set_radar() {
+        document.getElementById('radar').innerHTML = radar(JSON.parse(document.getElementById('radar_config').value), 24)
+    }
+    document.getElementById('radar_config').value = `[\n["前端",0.8],\n["架构",0.6],\n["审美",0.8],\n["后端",0.7],\n["安全",0.6]\n]`
+    set_radar()
+</script>
+
+</html>
